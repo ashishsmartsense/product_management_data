@@ -81,11 +81,11 @@ def create_product_item():
         #         "message": " The amount can't be negative ,please try again"
         #      }),416
 
-        # elif quantity <= 0:
-        #     return jsonify({
-        #         "status": 416,
-        #         "message" : "the quantity should be a positive integer value,kindly try again"
-        #      }), 416
+        elif not quantity.isnumeric():
+            return jsonify({
+               "status": 416,
+                "message": "the quantity should not be negative value,kindly try again"
+             }), 416
         #
         # elif len(new_product_name) <= 5:
         #     return jsonify({
